@@ -1,7 +1,10 @@
 package com.example.myapplication.ui.curriculum;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -16,6 +19,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.myapplication.DetailCurriculum;
+import com.example.myapplication.EditCompany;
 import com.example.myapplication.R;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -62,8 +67,11 @@ public class CurriculumFragment extends Fragment {
 
             CurriculumViewModel dataModel= dataModels.get(position);
 
-            Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getCargo()+" API: "+dataModel.getDesc(), Snackbar.LENGTH_LONG)
-                    .setAction("No action", null).show();
+            Intent k = new Intent(getContext(), DetailCurriculum.class);
+            startActivity(k);
+
+//            Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getCargo()+" API: "+dataModel.getDesc(), Snackbar.LENGTH_LONG)
+//                    .setAction("No action", null).show();
         });
 
         return root;
