@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,8 +21,8 @@ public class CustomAdapter extends ArrayAdapter<CurriculumViewModel> implements 
     // View lookup cache
     private static class ViewHolder {
         TextView txtName;
-        TextView txtType;
-        TextView txtVersion;
+        TextView txtCargo;
+        TextView txtDesc;
         ImageView info;
     }
 
@@ -47,25 +45,13 @@ public class CustomAdapter extends ArrayAdapter<CurriculumViewModel> implements 
         CurriculumViewModel dataModel=(CurriculumViewModel)object;
 
 
-
-
-        switch (v.getId())
-        {
-
-            case R.id.item_info:
-
-                Snackbar.make(v, "Release date " +dataModel.getFeature(), Snackbar.LENGTH_LONG)
-                        .setAction("No action", null).show();
-
-                break;
-
-
+        if (v.getId() == R.id.item_info) {
+            Snackbar.make(v, "Release date " + dataModel.getCargo(), Snackbar.LENGTH_LONG)
+                    .setAction("No action", null).show();
         }
 
 
     }
-
-    private int lastPosition = -1;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -83,8 +69,8 @@ public class CustomAdapter extends ArrayAdapter<CurriculumViewModel> implements 
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.row_item, parent, false);
             viewHolder.txtName = (TextView) convertView.findViewById(R.id.name);
-            viewHolder.txtType = (TextView) convertView.findViewById(R.id.type);
-            viewHolder.txtVersion = (TextView) convertView.findViewById(R.id.version_number);
+            viewHolder.txtCargo = (TextView) convertView.findViewById(R.id.cargo);
+            viewHolder.txtDesc = (TextView) convertView.findViewById(R.id.desc);
             viewHolder.info = (ImageView) convertView.findViewById(R.id.item_info);
 
             result=convertView;
@@ -95,12 +81,9 @@ public class CustomAdapter extends ArrayAdapter<CurriculumViewModel> implements 
             result=convertView;
         }
 
-        lastPosition = position;
-
-
         viewHolder.txtName.setText(dataModel.getName());
-        viewHolder.txtType.setText(dataModel.getType());
-        viewHolder.txtVersion.setText(dataModel.getVersion_number());
+        viewHolder.txtCargo.setText(dataModel.getCargo());
+        viewHolder.txtDesc.setText(dataModel.getDesc());
         viewHolder.info.setOnClickListener(this);
         viewHolder.info.setTag(position);
         // Return the completed view to render on screen

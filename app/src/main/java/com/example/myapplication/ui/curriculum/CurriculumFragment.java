@@ -41,33 +41,29 @@ public class CurriculumFragment extends Fragment {
 
         dataModels= new ArrayList<>();
 
-        dataModels.add(new CurriculumViewModel("Apple Pie", "Android 1.0", "1","September 23, 2008"));
-        dataModels.add(new CurriculumViewModel("Banana Bread", "Android 1.1", "2","February 9, 2009"));
-        dataModels.add(new CurriculumViewModel("Cupcake", "Android 1.5", "3","April 27, 2009"));
-        dataModels.add(new CurriculumViewModel("Donut","Android 1.6","4","September 15, 2009"));
-        dataModels.add(new CurriculumViewModel("Eclair", "Android 2.0", "5","October 26, 2009"));
-        dataModels.add(new CurriculumViewModel("Froyo", "Android 2.2", "8","May 20, 2010"));
-        dataModels.add(new CurriculumViewModel("Gingerbread", "Android 2.3", "9","December 6, 2010"));
-        dataModels.add(new CurriculumViewModel("Honeycomb","Android 3.0","11","February 22, 2011"));
-        dataModels.add(new CurriculumViewModel("Ice Cream Sandwich", "Android 4.0", "14","October 18, 2011"));
-        dataModels.add(new CurriculumViewModel("Jelly Bean", "Android 4.2", "16","July 9, 2012"));
-        dataModels.add(new CurriculumViewModel("Kitkat", "Android 4.4", "19","October 31, 2013"));
-        dataModels.add(new CurriculumViewModel("Lollipop","Android 5.0","21","November 12, 2014"));
-        dataModels.add(new CurriculumViewModel("Marshmallow", "Android 6.0", "23","October 5, 2015"));
+        dataModels.add(new CurriculumViewModel("Lucas Aguiar", "Desenvolvedor C#", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Manoel Heitor Silveira", "DBA", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Heloise Sarah Evelyn Oliveira", "Desenvolvedor PHP", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Bento Thales Bryan Barbosa", "Desenvolvedor C#", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Pietra Aparecida Sales", "Desenvolvedor C#", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Marcos Eduardo Bryan Farias", "Desenvolvedor js", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Juan Victor Farias", "Desenvolvedor C#", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Luzia Teresinha Eliane Mendes", "React Native", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Rayssa Jaqueline Bianca Costa", "Desenvolvedor Java", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Miguel Rafael Mourar", "Desenvolvedor C#", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+        dataModels.add(new CurriculumViewModel("Breno Mateus Gonçalves", "Desenvolvedor .NET", "Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat duis ante sem et, vivamus consectetur aliquam vestibulum felis class pretium ut."));
+
 
         adapter= new CustomAdapter(dataModels, root.getContext());
 
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        listView.setOnItemClickListener((parent, view, position, id) -> {
 
-                CurriculumViewModel dataModel= dataModels.get(position);
+            CurriculumViewModel dataModel= dataModels.get(position);
 
-                Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getType()+" API: "+dataModel.getVersion_number(), Snackbar.LENGTH_LONG)
-                        .setAction("No action", null).show();
-            }
+            Snackbar.make(view, dataModel.getName()+"\n"+dataModel.getCargo()+" API: "+dataModel.getDesc(), Snackbar.LENGTH_LONG)
+                    .setAction("No action", null).show();
         });
 
         return root;

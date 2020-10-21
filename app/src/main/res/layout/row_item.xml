@@ -1,64 +1,73 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="Marshmallow"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/black" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Lucas Aguiar"
+            android:width="350dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/black" />
 
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
-        android:layout_marginTop="5dp"
-        android:text="Android 6.0"
-        android:textColor="@android:color/black" />
+        <ImageView
+            android:id="@+id/item_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/purple_500"
+            android:src="@drawable/ic_baseline_assignment_24" />
 
-    <ImageView
-        android:id="@+id/item_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:src="@android:drawable/ic_dialog_info" />
-
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
 
         <TextView
-            android:id="@+id/version_heading"
+            android:id="@+id/version_heading1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="API: "
+            android:text="Cargo: "
             android:textColor="@android:color/black"
             android:textStyle="bold" />
 
-
         <TextView
-            android:id="@+id/version_number"
+            android:id="@+id/cargo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="23"
-            android:textAppearance="?android:attr/textAppearanceButton"
-            android:textColor="@android:color/black"
-            android:textStyle="bold" />
+            android:text="Desenvolvedor C#"
+            android:textColor="@android:color/black" />
+
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Lorem ipsum vel auctor curabitur gravida donec vivamus congue dolor, non nec nunc ante lacus placerat... "
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:maxLength="150"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+</LinearLayout>
 

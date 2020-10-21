@@ -7,33 +7,23 @@ import androidx.lifecycle.ViewModel;
 public class CurriculumViewModel extends ViewModel {
 
     String name;
-    String type;
-    String version_number;
-    String feature;
+    String cargo;
+    String desc;
 
-    public CurriculumViewModel(String name, String type, String version_number, String feature ) {
+    public CurriculumViewModel(String name, String cargo, String desc) {
         this.name=name;
-        this.type=type;
-        this.version_number=version_number;
-        this.feature=feature;
-
+        this.cargo=cargo;
+        this.desc=desc;
     }
     public String getName() {
         return name;
     }
 
-
-    public String getType() {
-        return type;
+    public String getCargo() {
+        return cargo;
     }
 
-
-    public String getVersion_number() {
-        return version_number;
-    }
-
-
-    public String getFeature() {
-        return feature;
+    public String getDesc() {
+        return desc;
     }
 }
